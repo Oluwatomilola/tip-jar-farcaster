@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Tip Jar - Send Crypto Tips on Farcaster</title>
+    <meta name="description" content="Send cryptocurrency tips to your favorite creators directly within Farcaster. Support creators with ETH or USDC in just a few taps." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tip Jar - Send Crypto Tips on Farcaster" />
+    <meta property="og:description" content="Send cryptocurrency tips to your favorite creators directly within Farcaster." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <!-- Farcaster Miniapp Meta Tags -->
+    <meta name="fc:miniapp" content='{"version":"1","imageUrl":"/og-image.png","button":{"title":"Send Tip","action":{"type":"launch_frame","name":"Tip Jar","url":"https://tip-jar.replit.app","splashImageUrl":"/splash.png","splashBackgroundColor":"#8A63D2"}}}' />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Safe Area for notched devices -->
+    <meta name="theme-color" content="#8A63D2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

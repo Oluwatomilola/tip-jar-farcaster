@@ -1,0 +1,17 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "Tip Jar",
+    "iconUrl": "/favicon.png",
+    "homeUrl": "/",
+    "imageUrl": "/og-image.svg",
+    "buttonTitle": "Send Tip",
+    "splashImageUrl": "/splash.svg",
+    "splashBackgroundColor": "#8A63D2",
+    "requiredChains": ["eip155:1", "eip155:8453"],
+    "requiredCapabilities": [
+      "actions.ready",
+      "wallet.getEthereumProvider"
+    ]
+  }
+}
