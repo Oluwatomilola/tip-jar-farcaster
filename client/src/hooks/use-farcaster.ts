@@ -45,7 +45,7 @@ export function useFarcaster(): UseFarcasterReturn {
         
         if (!mounted) return;
         
-        const ctx = sdk.context;
+        const ctx = sdk.context as any;
         
         if (ctx && ctx.user && ctx.user.fid > 0) {
           const farcasterContext: FarcasterContext = {
@@ -101,11 +101,12 @@ export function useFarcaster(): UseFarcasterReturn {
       
       try {
         const { sdk } = await import("@farcaster/miniapp-sdk");
+        const haptics = sdk.haptics as any;
         
         if (type === "success" || type === "warning" || type === "error") {
-          sdk.haptics?.notification?.(type);
+          haptics?.notificationOccurred?.(type);
         } else {
-          sdk.haptics?.impact?.(type);
+          haptics?.impactOccurred?.(type);
         }
       } catch {
         // Haptics not available
