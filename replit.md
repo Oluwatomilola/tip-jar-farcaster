@@ -2,14 +2,29 @@
 
 ## Overview
 
-Tip Jar is a Farcaster miniapp that enables users to send cryptocurrency tips (ETH or USDC) to creators directly within the Farcaster ecosystem. The application provides a simple, mobile-first interface for generating payment links and facilitating crypto tipping transactions.
+Tip Jar is a production-ready Farcaster miniapp that enables users to send cryptocurrency tips (ETH or USDC) to creators directly within the Farcaster ecosystem. The application provides a simple, mobile-first interface for generating payment links and facilitating crypto tipping transactions via Send.it.
 
 **Key Features:**
 - Send crypto tips in ETH or USDC
-- Farcaster miniapp integration with SDK
+- Farcaster miniapp integration with SDK context reading
 - Mobile-first, card-based UI inspired by Venmo
 - Ethereum address validation
-- Payment URL generation for tip transactions
+- Dynamic payment URL generation using `https://pay.send.it/{targetAddress}?amount=<value>` format
+- Customizable recipient settings with validation
+- Success/error/loading states with haptic feedback
+- Preset amount buttons for quick tipping
+- Demo mode for testing outside Farcaster client
+
+## Recent Changes
+
+**November 28, 2025:**
+- Initial production-ready implementation
+- Added comprehensive data-testid attributes for testing
+- Implemented StatusBanner component for success/error/info states
+- Added shake animation for error states
+- Settings panel with Zod validation for recipient name and wallet address
+- Farcaster manifest file at `.well-known/farcaster.json` for catalog submission
+- SVG splash and OG images for social sharing
 
 ## User Preferences
 
