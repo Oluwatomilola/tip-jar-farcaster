@@ -1,18 +1,61 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+export const currencySchema = z.enum(["ETH", "USDC"]);
+export type Currency = z.infer<typeof currencySchema>;
+
+export const tipRequestSchema = z.object({
+  targetAddress: z.string().regex(/^0x[a-fA-F0-9]{40}$/, "Invalid Ethereum address"),
+  amount: z.string().refine(
+    (val) => {
+      const num = parseFloat(val);
+      return !isNaN(num) && num > 0;
+    },
+    { message: "Amount must be a positive number" }
+  ),
+  currency: currencySchema,
+  senderFid: z.number().optional(),
+  senderUsername: z.string().optional(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+export type TipRequest = z.infer<typeof tipRequestSchema>;
+
+export const tipResponseSchema = z.object({
+  success: z.boolean(),
+  paymentUrl: z.string().url().optional(),
+  error: z.string().optional(),
 });
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type TipResponse = z.infer<typeof tipResponseSchema>;
+
+export const validateAddressSchema = z.object({
+  address: z.string(),
+});
+
+export type ValidateAddressRequest = z.infer<typeof validateAddressSchema>;
+
+export const validateAddressResponseSchema = z.object({
+  valid: z.boolean(),
+  address: z.string().optional(),
+  error: z.string().optional(),
+});
+
+export type ValidateAddressResponse = z.infer<typeof validateAddressResponseSchema>;
+
+export interface FarcasterUser {
+  fid: number;
+  username?: string;
+  displayName?: string;
+  pfpUrl?: string;
+}
+
+export interface FarcasterContext {
+  user: FarcasterUser;
+  client: {
+    platformType?: "web" | "mobile";
+    clientFid: number;
+    added: boolean;
+  };
+  location?: {
+    type: string;
+  };
+}
