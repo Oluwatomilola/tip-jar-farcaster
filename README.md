@@ -135,11 +135,11 @@ If the project uses a custom contract:
 
 - Add NFT or badge rewards for supporters
 
-🤝 Contributing
+## 🤝 Contributing
 
 Pull requests are welcome!
 Open an issue for features or bug reports.
 
-📄 License
+## 📄 License
 
 MIT License — free to use, modify, and deploy.
