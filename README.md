@@ -1,12 +1,8 @@
 # Tip Jar - Farcaster Miniapp
 
-A production-ready Farcaster miniapp for sending crypto tips.
-
-Tip Jar – Farcaster Miniapp
-
 A lightweight, production-ready Farcaster Miniapp that enables users to send crypto tips seamlessly inside the Farcaster ecosystem. Built for creators, communities, and apps that want simple, fast, onchain value transfer with minimal friction.
 
-🚀 Overview
+## 🚀 Overview
 
 Tip Jar is a Farcaster Miniapp designed to make tipping as easy as reacting to a cast. It integrates onchain payments with an intuitive UI so users can:
 
