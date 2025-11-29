@@ -6,45 +6,47 @@ A lightweight, production-ready Farcaster Miniapp that enables users to send cry
 
 Tip Jar is a Farcaster Miniapp designed to make tipping as easy as reacting to a cast. It integrates onchain payments with an intuitive UI so users can:
 
-Send small crypto tips to creators or community members
+- Send small crypto tips to creators or community members
 
-Support posts directly from within Farcaster
+- Support posts directly from within Farcaster
 
-Track tip transactions transparently onchain
+- Track tip transactions transparently onchain
 
-Plug into any Frame or Farcaster client that supports miniapps
+- Plug into any Frame or Farcaster client that supports miniapps
 
 The miniapp is optimized for speed, reliability, and UX simplicity — ideal for creators looking to monetize engagement or communities running reward loops.
 
-✨ Features
 
-One-tap tipping: Simple flow for sending tips directly within Farcaster.
+## ✨ Features
 
-Miniapp-native UI: Responsive interface optimized for Warpcast & other clients.
+- One-tap tipping: Simple flow for sending tips directly within Farcaster.
 
-Supports multiple tokens (e.g., USDC, ETH, or any ERC-20 depending on configuration).
+- Miniapp-native UI: Responsive interface optimized for Warpcast & other clients.
 
-Secure wallet interactions via supported Farcaster wallet integrations.
+- Supports multiple tokens (e.g., USDC, ETH, or any ERC-20 depending on configuration).
 
-Transaction history view (optional, depending on integration).
+- Secure wallet interactions via supported Farcaster wallet integrations.
 
-Customizable Tip Amounts: Pre-set buttons or user-entered values.
+- Transaction history view (optional, depending on integration).
 
-Developer-friendly setup with clear configuration and environment variables.
+- Customizable Tip Amounts: Pre-set buttons or user-entered values.
 
-🧱 Tech Stack
+- Developer-friendly setup with clear configuration and environment variables.
 
-Farcaster Miniapps SDK (Mini App Studio or custom build)
 
-Next.js / React (if using a web wrapper)
+## 🧱 Tech Stack
 
-Smart contract interactions: Ethers.js / viem
+- Farcaster Miniapps SDK (Mini App Studio or custom build)
 
-Hosting: Vercel / Cloudflare / any static host
+- Next.js / React (if using a web wrapper)
 
-Optional: A lightweight Solidity contract if the app manages tipping logic
+- Smart contract interactions: Ethers.js / viem
 
-📦 Project Structure
+- Hosting: Vercel / Cloudflare / any static host
+
+- Optional: A lightweight Solidity contract if the app manages tipping logic
+
+## 📦 Project Structure
 
 (Example — adjust based on your actual project)
 
@@ -62,31 +64,32 @@ Optional: A lightweight Solidity contract if the app manages tipping logic
 README.md
 package.json
 
-⚙️ Setup & Installation
+## ⚙️ Setup & Installation
 
-Clone the repository:
+1. Clone the repository:
 
 git clone https://github.com/<your-username>/tipjar-miniapp.git
 cd tipjar-miniapp
 
 
-Install dependencies:
+2. Install dependencies:
 
 npm install
 
 
-Create a .env file:
+3. Create a .env file:
 
 NEXT_PUBLIC_FARCASTER_CLIENT_ID=...
 NEXT_PUBLIC_RPC_URL=...
 NEXT_PUBLIC_SUPPORTED_TOKENS=...
 
 
-Run the development server:
+4. Run the development server:
 
 npm run dev
 
-🧪 How It Works
+
+## 🧪 How It Works
 1. User Opens Miniapp
 
 From a cast, link, or embedded frame.
@@ -107,35 +110,36 @@ Funds are sent directly to the creator’s wallet.
 
 Displays status + a link to the transaction explorer.
 
-🔗 Smart Contract (Optional)
+
+## 🔗 Smart Contract (Optional)
 
 If the project uses a custom contract:
 
-Contract name: TipJar
+- Contract name: TipJar
 
-Purpose: route & record tips
+- Purpose: route & record tips
 
-Events: TipSent(sender, recipient, amount, token)
+- Events: TipSent(sender, recipient, amount, token)
 
-Chain: Base / Celo / Polygon / Any EVM network
+- Chain: Base / Celo / Polygon / Any EVM network
 
-(Share your contract if you want an exact section written.)
+- (Share your contract if you want an exact section written.)
 
-🧭 Roadmap
+## 🧭 Roadmap
 
-Add analytics dashboard
+- Add analytics dashboard
 
-Add recurring tipping (“subscribe to support”)
+- Add recurring tipping (“subscribe to support”)
 
-Allow creators to customize their miniapp
+- Allow creators to customize their miniapp
 
-Add NFT or badge rewards for supporters
+- Add NFT or badge rewards for supporters
 
-🤝 Contributing
+## 🤝 Contributing
 
 Pull requests are welcome!
 Open an issue for features or bug reports.
 
-📄 License
+## 📄 License
 
 MIT License — free to use, modify, and deploy.
