@@ -64,20 +64,20 @@ The miniapp is optimized for speed, reliability, and UX simplicity — ideal for
 README.md
 package.json
 
-⚙️ Setup & Installation
+## ⚙️ Setup & Installation
 
-Clone the repository:
+1. Clone the repository:
 
 git clone https://github.com/<your-username>/tipjar-miniapp.git
 cd tipjar-miniapp
 
 
-Install dependencies:
+2. Install dependencies:
 
 npm install
 
 
-Create a .env file:
+3. Create a .env file:
 
 NEXT_PUBLIC_FARCASTER_CLIENT_ID=...
 NEXT_PUBLIC_RPC_URL=...
