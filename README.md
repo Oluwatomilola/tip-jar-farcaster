@@ -84,7 +84,7 @@ NEXT_PUBLIC_RPC_URL=...
 NEXT_PUBLIC_SUPPORTED_TOKENS=...
 
 
-Run the development server:
+4. Run the development server:
 
 npm run dev
 
