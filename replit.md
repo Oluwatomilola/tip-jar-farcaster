@@ -7,9 +7,6 @@ Tip Jar is a production-ready Farcaster miniapp that enables users to send crypt
 **Key Features:**
 - Send crypto tips in ETH or USDC
 - Farcaster miniapp integration with SDK context reading
-- **WalletConnect/Reown integration for standalone wallet connections**
-- **Direct ETH transfers from connected wallets (MetaMask, Coinbase Wallet, etc.)**
-- **Network switching between Ethereum mainnet and Base**
 - Mobile-first, card-based UI inspired by Venmo
 - Ethereum address validation
 - Dynamic payment URL generation using `https://pay.send.it/{targetAddress}?amount=<value>` format
@@ -19,14 +16,6 @@ Tip Jar is a production-ready Farcaster miniapp that enables users to send crypt
 - Demo mode for testing outside Farcaster client
 
 ## Recent Changes
-
-**November 29, 2025:**
-- Added Reown/WalletConnect integration for standalone wallet connections
-- Users can now connect MetaMask, Coinbase Wallet, WalletConnect, and 300+ other wallets
-- Direct ETH transfers from connected wallets (no external payment links needed)
-- Wallet status display with address, balance, and network switching
-- Support for Ethereum mainnet and Base networks
-- New Web3Provider wrapper using wagmi and viem
 
 **November 28, 2025:**
 - Initial production-ready implementation
@@ -124,13 +113,7 @@ No traditional session-based authentication. User identity derived from Farcaste
 - Defines miniapp metadata in `.well-known/farcaster.json`
 
 **Ethereum/Crypto Infrastructure:**
-- **wagmi** (v2.12.16) - React hooks for Ethereum interactions
-- **viem** (v2.21.1) - TypeScript interface for Ethereum
-- **@walletconnect/ethereum-provider** - WalletConnect v2 protocol support
-- Direct ETH transfers via `useSendTransaction` hook
-- Support for injected wallets (MetaMask), WalletConnect, and Coinbase Wallet
-- Network support: Ethereum mainnet and Base
-- Payment URLs generated via Send.it for USDC transactions
+Payment URLs generated for tip transactions (implementation details abstracted in `generatePaymentUrl` function). The application prepares for blockchain interactions but delegates actual transaction execution to external wallet providers.
 
 **Required Capabilities:**
 - `actions.ready` - Miniapp initialization signal
